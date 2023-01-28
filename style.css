@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    /*  */
+    --font:'Poppins', sans-serif;
+
+    /*  */
+    --color: #6f4bff;
+    --bg-color: #c5d9ff;
+}
+
+/*  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+/* Card */
+
+.card {
+    background-color: #fff;
+    width: 22rem;
+    height: 27em;
+    border-radius: 1em;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, .15);
+    position: relative;
+    transition: 1s;
+    transform: scale(1);
+}
+
+.card:hover {
+    transform: scale(1.12);
+}
+
+.card__content {
+    height: 100%;
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card__icon {
+    font-size: 8rem;
+    color: var(--color);
+    margin-top: .1em;
+}
+
+.card__text {
+    font-size: 1.5em;
+    text-align: center;
+    color: #777777;
+    margin-top: 1em;
+}
+
+.card__btn {
+    background-color: var(--color);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 8px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    width: 10em;
+    height: 3em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transform: scale(1);
+    transition: .3s linear;
+}
+
+.card__btn:hover {
+    transform: scale(1.07) translateY(7px);
+}
+
+.card__ribbon {
+    /* background-color: black; */
+    width: 12em;
+    height: 12em;
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card__ribbon::after {
+    content: 'Special offer';
+    position: absolute;
+    width: 150%;
+    height: 3.5em;
+    background-color: var(--color);
+    transform: rotate(-45deg) translateY(-1.7em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .1em;
+    box-shadow: 0 .3em .6em rgba(0, 0, 0, .2);
+}
+
+.card__ribbon::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    background-color: #5a3ecc;
+    box-shadow: 11em -11em #5a3ecc;
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 80%;
+        margin: auto 10%;
+    }
+    .card__text {
+        font-size: 1.4em;
+    }
+}
